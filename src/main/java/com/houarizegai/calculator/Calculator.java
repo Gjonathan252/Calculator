@@ -31,7 +31,7 @@ public class Calculator {
     private boolean addWrite = true; // Connect numbers in display
     private double val = 0; // Save the value typed for calculation
 
-    /*
+      /*
         Mx Calculator: 
         X = Row
         Y = Column
@@ -72,12 +72,14 @@ public class Calculator {
         window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         window.setLocationRelativeTo(null); // Move window to center
 
-        comboTheme = initCombo(new String[]{"Simple", "Colored", "DarkTheme"}, 230, 30, "Theme", themeSwitchEventConsumer);
+        comboTheme = initCombo(new String[] { "Simple", "Colored", "DarkTheme" }, 230, 30, "Theme",
+                themeSwitchEventConsumer);
 
-        comboCalcType = initCombo(new String[]{"Standard", "Scientific"}, 20, 30, "Calculator type", calcTypeSwitchEventConsumer);
+        comboCalcType = initCombo(new String[] { "Standard", "Scientific" }, 20, 30, "Calculator type",
+                calcTypeSwitchEventConsumer);
 
-        int[] x = {MARGIN_X, MARGIN_X + 90, 200, 290, 380};
-        int[] y = {MARGIN_Y, MARGIN_Y + 100, MARGIN_Y + 180, MARGIN_Y + 260, MARGIN_Y + 340, MARGIN_Y + 420};
+        int[] x = { MARGIN_X, MARGIN_X + 90, 200, 290, 380 };
+        int[] y = { MARGIN_Y, MARGIN_Y + 100, MARGIN_Y + 180, MARGIN_Y + 260, MARGIN_Y + 340, MARGIN_Y + 420 };
 
         inText = new JTextField("0");
         inText.setBounds(x[0], y[0], 350, 70);
@@ -480,7 +482,8 @@ public class Calculator {
     }
 
     private Consumer<ItemEvent> calcTypeSwitchEventConsumer = event -> {
-        if (event.getStateChange() != ItemEvent.SELECTED) return;
+        if (event.getStateChange() != ItemEvent.SELECTED)
+            return;
 
         String selectedItem = (String) event.getItem();
         switch (selectedItem) {
@@ -500,7 +503,8 @@ public class Calculator {
     };
 
     private Consumer<ItemEvent> themeSwitchEventConsumer = event -> {
-        if (event.getStateChange() != ItemEvent.SELECTED) return;
+        if (event.getStateChange() != ItemEvent.SELECTED)
+            return;
 
         String selectedTheme = (String) event.getItem();
         switch (selectedTheme) {
